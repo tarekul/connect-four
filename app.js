@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const squares = document.querySelectorAll(".grid div");
+  const squares = document.querySelectorAll(".circle");
+  console.log(squares);
   const result = document.querySelector("#result");
   const displayCurrentPlayer = document.querySelector("#current-player");
   let currentPlayer = 1;
@@ -15,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ) {
             squares[index].classList.add("taken");
             squares[index].classList.add("player-one");
+            squares[index].style.backgroundColor = "red";
             //change the player
             currentPlayer = 2;
             displayCurrentPlayer.innerHTML = currentPlayer;
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
           ) {
             squares[index].classList.add("taken");
             squares[index].classList.add("player-two");
+            squares[index].style.backgroundColor = "blue";
             //change the player
             currentPlayer = 1;
             displayCurrentPlayer.innerHTML = currentPlayer;

@@ -2,21 +2,38 @@
   border: 1px solid rebeccapurple;
   display: flex;
   flex-wrap: wrap;
-  height: 300px;
-  width: 350px;
+  height: 360px;
+  width: 420px;
+  position: absolute;
+  left: 50%;
+  margin-left: -200px;
 }
 
 .grid div {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
 }
 
-.player-one {
-  background-color: red;
-  border-radius: 10px;
+.cell {
+  background-color: yellow;
 }
 
-.player-two {
-  background-color: blue;
-  border-radius: 10px;
+.circle {
+  border-radius: 30px;
+  background-color: white;
+}
+
+.endgame {
+  display: none;
+  width: 200px;
+  background-color: lightblue;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+  top: 150px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 2em;
 }
