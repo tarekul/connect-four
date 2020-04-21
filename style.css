@@ -2,25 +2,43 @@
   border: 1px solid rebeccapurple;
   display: flex;
   flex-wrap: wrap;
-  height: 360px;
-  width: 420px;
+  height: 600px;
+  width: 700px;
   position: absolute;
   left: 50%;
-  margin-left: -200px;
+  margin-left: -350px;
 }
 
 .grid div {
-  height: 60px;
-  width: 60px;
+  height: 100px;
+  width: 100px;
+}
+
+.circle {
+  border-radius: 600px;
+  background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .grid {
+    height: 360px;
+    width: 420px;
+  }
+  .grid div {
+    height: 60px;
+    width: 60px;
+  }
+  .circle {
+    border-radius: 30px;
+    background-color: white;
+  }
+  .grid {
+    margin-left: -210px;
+  }
 }
 
 .cell {
   background-color: yellow;
-}
-
-.circle {
-  border-radius: 30px;
-  background-color: white;
 }
 
 .endgame {
