@@ -1,12 +1,13 @@
-const huPlayer = "red";
-const aiPlayer = "blue";
+const player1 = "red";
+const player2 = "blue";
 const squares = document.querySelectorAll(".circle");
-
+let player;
 let board;
 
 startGame();
 function startGame() {
-  board = Array.from(Array(42).keys());
+  player = player1;
+  board = Array.from(Array(48).keys());
   document.querySelector(".endgame").style.display = "none";
   for (let i = 0; i < squares.length; i++) {
     if (i > 41) board[i] = "taken";
@@ -20,16 +21,18 @@ function turnClick(square) {
     typeof board[square.target.id] === "number" &&
     typeof board[parseInt(square.target.id) + 7] !== "number"
   ) {
-    turn(square.target.id, huPlayer);
-    if (!checkWin(board, huPlayer)) turn(bestSpot(), aiPlayer);
+    checkWin(board, player);
+    turn(square.target.id);
   }
 }
 
-function turn(squareId, player) {
+function turn(squareId) {
+  console.log(player);
   board[squareId] = player;
   squares[squareId].style.backgroundColor = player;
   const gameWon = checkWin(board, player);
   if (gameWon) gameOver(gameWon);
+  player = player === player1 ? player2 : player1;
 }
 
 function gameOver(gameWon) {
@@ -47,9 +50,6 @@ function emptySquares() {
   );
 }
 
-function bestSpot() {
-  return emptySquares()[0];
-}
 //check the board for a win or lose
 function checkWin(board, player) {
   const winningArrays = [
